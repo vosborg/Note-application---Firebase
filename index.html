@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <title>NoteApp</title>
+</head>
+<body>  
+<div class="container my-5">
+    <div class="row">
+        <div class="col-6">
+            <h2>Notes</h2>
+                <ul >
+
+                    
+                </ul>
+        </div>
+        <div class="col-6">
+        <form>
+            <label for="note">Add new note:</label>
+            <div class="input-group">
+                <div class="col-12">
+                    <input type="text" placeholder="Write your title" class="form-control" id="note" required>
+                </div>
+                <div class="col-12">
+                    <textarea type="text" placeholder="Write your note" class="form-control" id="noteBody"  required></textarea>
+                </div>
+                <div class="input-group-append">
+                    <!---->
+                    <input type="submit" value="add" class="btn btn-outline-secondary">
+                    <br>
+                    <input type="checkbox" id="importantCB" name="important" class="btn "> 
+                    <label for="importantCB">Important note</label>
+                    <br>
+                    <br>
+                    <!--
+                    <input type="checkbox" id="showImportant" class="btnShow btn btn-outline-secondary" role="switch">
+                    <label for="showImportant" >Show important notes only</label>
+                    --> 
+                    
+                </div>  
+
+        </div>
+        <br>
+        <h2>Search in notes</h2>
+
+        <input class= "form-control search m-auto" name="search" type="text" placeholder="Search for words included in note titles" id="search">
+        <div id="importantFilter">
+            <input  type="checkbox" data-toggle="toggle" onclick="isNoteImp()" id="impFilter">
+            <label for="impFilter"> Toggle important notes</label>
+    </div>
+    </div>
+    </div>
+</div>
+    
+        
+    </form>
+  
+   
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script>
+          // replace "xxxx" with your own generated firebase config
+               const firebaseConfig = {
+                apiKey: "AIzaSyAKSv6re80vgsiQTlr6AduIWSIivwLWWcE",
+                authDomain: "noteapp-a8d23.firebaseapp.com",
+                projectId: "noteapp-a8d23",
+                storageBucket: "noteapp-a8d23.appspot.com",
+                messagingSenderId: "921734095565",
+                appId: "1:921734095565:web:412cfa00afe5e3b99cbf84",
+                measurementId: "G-FYWQ3T7620"
+               };
+       
+               firebase.initializeApp(firebaseConfig);
+               const db = firebase.firestore();
+      </script>
+    <script src="main.js"></script>
+</body>
+</html>

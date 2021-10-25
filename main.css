@@ -1,0 +1,24 @@
+#noteBody{
+    height: auto;
+}
+li{
+    list-style: none;
+}
+
+.filtered{
+    display: none;
+}
+.noteHeader{
+    font-weight: bold;
+}
+
+.notImp{
+    color: red;
+}
+
+.col-4{
+    display: inline-flex;
+}
+.test{
+    display:none;
+}
